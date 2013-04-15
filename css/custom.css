@@ -1,0 +1,38 @@
+a.bouton_acheter {color:#FFF947}
+a.bouton_acheter span {background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNDlEOTE1OyIgLz48c3RvcCBvZmZzZXQ9IjQ4JSIgc3R5bGU9InN0b3AtY29sb3I6I0ZDM0EwNTsiIC8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMEE3MUY3OyIgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCBmaWxsPSJ1cmwoI2dyYWRpZW50KSIgaGVpZ2h0PSIxMDAlIiB3aWR0aD0iMTAwJSIgLz48L3N2Zz4=);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #49D915), color-stop(48%, #FC3A05), color-stop(100%, #0A71F7));
+background: -moz-linear-gradient(top,#49D915 0%,#FC3A05 48%,#0A71F7 100%);
+background: -webkit-linear-gradient(top,#49D915 0%,#FC3A05 48%,#0A71F7 100%);
+background: -o-linear-gradient(top,#49D915 0%,#FC3A05 48%,#0A71F7 100%);
+background: -ms-linear-gradient(top,#49D915 0%,#FC3A05 48%,#0A71F7 100%);
+background: linear-gradient(top,#49D915 0%,#FC3A05 48%,#0A71F7 100%);
+border-radius:10px}
+a.bouton_acheter span:after {content:url(http://dev.roxmedia.fr/wordpress/wp-content/plugins/sixtoys/img/pictos/bouton_acheter/caddie_fonce.png)}
+
+
+ul.sixtoyz li.cpt0 {border-color:#000000; 
+background:#E7E7E7}
+ul.sixtoyz li.cpt1 {border-color:#000000; 
+background:#FFFFFF}
+ul.sixtoyz li {border-radius:8px;
+border-width:4px}
+ul.sixtoyz li h4 {color:#B80D0D}
+ul.sixtoyz li p {color:#757575}
+ul.sixtoyz li .prix {color:#F7F7F7; 
+background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojQzQ0QkM0OyIgLz48c3RvcCBvZmZzZXQ9IjY5JSIgc3R5bGU9InN0b3AtY29sb3I6Izk1NEJDMjsiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNncmFkaWVudCkiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiIC8+PC9zdmc+);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #C44BC4), color-stop(69%, #954BC2));
+background: -moz-linear-gradient(top,#C44BC4 0%,#954BC2 69%);
+background: -webkit-linear-gradient(top,#C44BC4 0%,#954BC2 69%);
+background: -o-linear-gradient(top,#C44BC4 0%,#954BC2 69%);
+background: -ms-linear-gradient(top,#C44BC4 0%,#954BC2 69%);
+background: linear-gradient(top,#C44BC4 0%,#954BC2 69%);
+border-radius:4px}
+ul.sixtoyz li .visuel .promo {color:#FFF947; 
+background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNDlEOTE1OyIgLz48c3RvcCBvZmZzZXQ9IjQ4JSIgc3R5bGU9InN0b3AtY29sb3I6I0ZDM0EwNTsiIC8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMEE3MUY3OyIgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCBmaWxsPSJ1cmwoI2dyYWRpZW50KSIgaGVpZ2h0PSIxMDAlIiB3aWR0aD0iMTAwJSIgLz48L3N2Zz4=);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #49D915), color-stop(48%, #FC3A05), color-stop(100%, #0A71F7));
+background: -moz-linear-gradient(top,#49D915 0%,#FC3A05 48%,#0A71F7 100%);
+background: -webkit-linear-gradient(top,#49D915 0%,#FC3A05 48%,#0A71F7 100%);
+background: -o-linear-gradient(top,#49D915 0%,#FC3A05 48%,#0A71F7 100%);
+background: -ms-linear-gradient(top,#49D915 0%,#FC3A05 48%,#0A71F7 100%);
+background: linear-gradient(top,#49D915 0%,#FC3A05 48%,#0A71F7 100%);} 
+

@@ -1,0 +1,5 @@
+#icon-6toyz {background:url(../img/favicon_32.png) no-repeat left}
+
+.down_button, .up_button {cursor:pointer}
+
+.colorpicker {z-index:80}
