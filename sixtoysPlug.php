@@ -5,7 +5,7 @@
   Plugin URI: http://www.6toyz.fr
   Description: -
   Author: 6Toyz
-  Version: 0.4
+  Version: 1.0.1
   Author URI: http://www.6toyz.fr/
  */
 

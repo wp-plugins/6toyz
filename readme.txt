@@ -10,7 +10,7 @@ Affiliation 6toyz
 
 == Description ==
 
-Affiliation 6toyz. Le plugin se connecte à la plateforme d'affiliation 6toyz.fr. En rentrant vos identifiants, vous allez pouvoir récupérer les flux d'informations de vos marques blanches.
+Affiliation 6toyz. Le plugin se connecte Ã  la plateforme d'affiliation 6toyz.fr. En rentrant vos identifiants, vous allez pouvoir rÃ©cupÃ©rer les flux d'informations de vos marques blanches.
 
 == Installation ==
 
@@ -21,3 +21,5 @@ Extraire le fichier zip et d&amp;eacute;posez simplement le contenu dans le r&am
 1. Gestion des articles.
 
 == Changelog ==
+
+1.0.1 : Correction des accents
