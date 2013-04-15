@@ -4,13 +4,22 @@ Plugin URI: http://www.6toyz.fr/
 Tags:
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
 Affiliation 6toyz
 
 == Description ==
 
-Affiliation 6toyz. Le plugin se connecte a la plateforme d'affiliation 6toyz.fr. En rentrant vos identifiants, vous allez pouvoir recuperer les flux d'informations de vos marques blanches.
+Cr&eacute;ez votre boutique sexy sur votre WordPress !
+
+6toyz.fr est l'affiliation sexshop de r&eacute;f&eacute;rence sur le march&eacute; français. Soci&eacute;t&eacute; pr&eacute;sente depuis 2007 avec la boutique http://www.coquin-malin.com, nous comptons d&eacute;j&agrave; plus de 900 affili&eacute;s partenaires et quelques 150 000 clients sur nos diff&eacute;rentes boutiques.
+
+D&eacute;couvrez nos nombreux outils dynamiques et customisables en vous rendant sur notre site http://www.6toyz.fr
+De nombreuses boutiques sexy &agrave; promouvoir: lingerie homme et femme, sextoys, massage, bien-être, DVD...
+
+Plus de 3900 produits disponibles en stock, nous g&eacute;rons vos achats, le service apr&egrave;s-vente et la logistique, vous n'avez rien &agrave; faire !
+
+Venez vous inscrire sur la plateforme 6toyz : http://www.6toyz.fr
 
 == Installation ==
 
@@ -24,3 +33,4 @@ Extraire le fichier zip et deposez simplement le contenu dans le repertoire wp-c
 
 1.0.1 : Correction des accents
 1.0.2 : Fix bugs version
+1.0.3 : Description du plugin
