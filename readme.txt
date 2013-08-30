@@ -35,3 +35,4 @@ Extraire le fichier zip et d&eacute;posez simplement le contenu dans le r&eacute
 1.0.2 : Fix bugs version
 1.0.3 : Description du plugin
 1.0.4 : Re-correction des accents
+1.0.5 : Fix bugs importation + WP 3.6 ok

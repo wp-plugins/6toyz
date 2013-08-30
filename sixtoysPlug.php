@@ -5,7 +5,7 @@
   Plugin URI: http://www.6toyz.fr
   Description: -
   Author: 6Toyz
-  Version: 1.0.4
+  Version: 1.0.5
   Author URI: http://www.6toyz.fr/
  */
 
@@ -638,8 +638,8 @@ class sixtoyzPlug
 		// Produits :
 		if ($this->flux != 'http://www.sexeapiles.com/') {
 			foreach ($this->categories as $category) {
-				$request_url = $this->flux . "sitemap/products/output/xml/category/" . $category->slug;
-
+				$request_url = $this->flux . "/sitemap/products/output/xml/category/" . $category->slug;
+				
 				$ch = curl_init();
 				curl_setopt($ch, CURLOPT_URL, $request_url);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -655,7 +655,7 @@ class sixtoyzPlug
 				$products = $xml->xpath('/products/product');
 				
 				foreach ($products as $product) {
-					$test = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) `" . PRODUCTS_TABLE . "` WHERE id='$product->ref' LIMIT 0,1"));
+					$test = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) `" . PRODUCTS_TABLE . "` WHERE id=%s LIMIT 0,1", $product->ref));
 
 					$object_vars = get_object_vars($product);
 
@@ -702,7 +702,7 @@ class sixtoyzPlug
 				// Récup de la catégorie :
 				$category = $wpdb->get_results('SELECT * FROM '.CATEGORIES_TABLE.' WHERE name = "'.addslashes(trim($product->category)).'" ');
 				
-				$test = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) `" . PRODUCTS_TABLE . "` WHERE id='$product->id' LIMIT 0,1"));
+				$test = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) `" . PRODUCTS_TABLE . "` WHERE id=%s LIMIT 0,1", $product->id));
 
 				if ($test == 0) {
 					$sql = "INSERT INTO `" . PRODUCTS_TABLE . "` (id,id_product,name,description,price,price_old,img_url,url,marque,marque_url,marque_slug,id_categorie,
