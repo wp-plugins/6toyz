@@ -4,7 +4,7 @@ Plugin URI: http://www.6toyz.fr/
 Tags:
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 1.0.6
+Stable tag: 1.1.0
 
 Affiliation 6toyz
 
@@ -37,3 +37,4 @@ Extraire le fichier zip et d&eacute;posez simplement le contenu dans le r&eacute
 1.0.4 : Re-correction des accents
 1.0.5 : Fix bugs importation
 1.0.6 : WP 3.6 OK
+1.1.0 : WP 3.6
