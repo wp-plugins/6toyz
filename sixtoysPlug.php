@@ -5,7 +5,7 @@
   Plugin URI: http://www.6toyz.fr
   Description: -
   Author: 6Toyz
-  Version: 1.1.0
+  Version: 1.1.1
   Author URI: http://www.6toyz.fr/
  */
 
@@ -701,14 +701,53 @@ class sixtoyzPlug
 			
 				// Récup de la catégorie :
 				$category = $wpdb->get_results('SELECT * FROM '.CATEGORIES_TABLE.' WHERE name = "'.addslashes(trim($product->category)).'" ');
-				
+
 				$test = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) `" . PRODUCTS_TABLE . "` WHERE id=%s LIMIT 0,1", $product->id));
 
 				if ($test == 0) {
-					$sql = "INSERT INTO `" . PRODUCTS_TABLE . "` (id,id_product,name,description,price,price_old,img_url,url,marque,marque_url,marque_slug,id_categorie,
-							video_title, video_url, video_description, video_author, video_vid, video_vkey, video_flv, video_img) 
-							VALUES('".addslashes(trim($product->ref))."','".addslashes(trim($product->id))."','".addslashes(trim($product->name))."','".addslashes(trim($product->description))."','".addslashes(trim($product->price))."','','".addslashes(trim($product->photo_150x230))."','".addslashes(trim($product->url))."', '".addslashes(trim($category[0]->id))."', '".addslashes(trim($product->marque))."', '".addslashes(trim($product->marque_url))."', '".addslashes(trim($product->marque_slug))."',
-							'".addslashes(trim((string)$product->video->title[0]))."', '".addslashes(trim($product->video->link))."', '".addslashes(trim($product->video->description))."', '".addslashes(trim($product->video->author))."', '".addslashes(trim($product->video->vid))."', '".addslashes(trim($product->video->vkey))."', '".addslashes(trim($product->video->flv))."', '".addslashes(trim($product->video->img))."')";
+$sql = "INSERT INTO `" . PRODUCTS_TABLE . "` 
+    (id,
+    id_product,
+    name,
+    description,
+    price,
+    price_old,
+    img_url,
+    url,
+    marque,
+    marque_url,
+    marque_slug,
+    id_categorie,
+    video_title,
+    video_url, 
+    video_description,
+    video_author,
+    video_vid,
+    video_vkey,
+    video_flv, 
+    video_img)
+    VALUES('".
+        addslashes(trim($product->ref))."','". // id
+        addslashes(trim($product->id))."','". // id_produit
+        addslashes(trim($product->name))."','". // name
+        addslashes(trim($product->description))."','". // description
+        addslashes(trim($product->price))."',". // price
+        " '','". // price_old
+        addslashes(trim($product->photo_150x230))."','". // img_url
+        addslashes(trim($product->url))."', '". // url
+        addslashes(trim($product->marque))."', '". //marque
+        addslashes(trim($product->marque_url))."', '". // marque_url
+        addslashes(trim($product->marque_slug))."','". // marque_slug
+        addslashes(trim($category[0]->id))."', '". // id_categorie    
+        addslashes(trim((string)$product->video->title[0]))."', '". // video_title
+        addslashes(trim($product->video->link))."', '". // video_url
+        addslashes(trim($product->video->description))."', '". // video_description
+        addslashes(trim($product->video->author))."', '". // video_author
+        addslashes(trim($product->video->vid))."', '". // video_vid
+        addslashes(trim($product->video->vkey))."', '". // video_vkey
+        addslashes(trim($product->video->flv))."', '". // video_flv
+        addslashes(trim($product->video->img))."')"; // video_img
+
 				}
 				else
 					$sql = "UPDATE `" . PRODUCTS_TABLE . "` SET price='$product->price' WHERE id='$product->id' LIMIT 1;";
@@ -781,16 +820,17 @@ class sixtoyzPlug
      * @return int 
      */
     function post_all() {
-		global $wpdb;
+	
+	global $wpdb;
 
         $total = 0;
         $produits = $wpdb->get_results("SELECT p.*, c.name AS category_name, c.wp_categorie FROM " . PRODUCTS_TABLE . " AS p INNER JOIN " . CATEGORIES_TABLE . " AS c ON c.id=p.id_categorie WHERE p.id_post=0 AND wp_categorie > 0");
 		
-		if ($this->flux != 'http://www.sexeapiles.com/')
-			$template = file_get_contents(TEMPLATE_FILE);
-		else
-			$template = file_get_contents(TEMPLATE_FILE_VIDEO);
-		
+	if ($this->flux != 'http://www.sexeapiles.com/')
+		$template = file_get_contents(TEMPLATE_FILE);
+	else
+		$template = file_get_contents(TEMPLATE_FILE_VIDEO);
+	
         $affiliate_id = get_option('affiliate_id');
         $tracker = get_option('tracker');
         $status = get_option('new_post_status');
@@ -899,6 +939,10 @@ class sixtoyzPlug
             $content = str_replace("[intro]", $intro, $content);
 
             $new_post = $this->new_post($produit->name, $content, $status, 1, date("Y-m-d H:i:s", $date), ($tags_produits ? $tags : null), array($produit->wp_categorie));
+
+	    add_post_meta($new_post, 'flv', $produit->video_flv, true);
+	    add_post_meta($new_post, 'video_url', $produit->video_url, true);
+   	    add_post_meta($new_post, 'product_url', $produit->url, true); 
 
             $wpdb->update(PRODUCTS_TABLE, array("id_post" => $new_post), array('id' => $produit->id), array('%d'), array('%d'));
 
@@ -1061,6 +1105,11 @@ class sixtoyzPlug
             $update_post = $this->update_post($produit->id_post, $post_old['post_title'], $new_content, $post_old['post_status'], $post_old['post_author'], $post_old['post_date'], $post_old['post_category']);
             #$new_post = $this->new_post($produit->name, $content, $status, 1, date("Y-m-d H:i:s", $date), ($tags_produits ? $tags : null), array($produit->wp_categorie));
             #$wpdb->update(VIDEOS_TABLE, array("id_post" => $new_post), array('id' => $produit->id), array('%d'), array('%d'));
+
+	    $new_post = $produit->id_post;
+            add_post_meta($new_post, 'flv', $produit->video_flv, true) || update_post_meta($new_post, 'flv', $produit->video_flv);
+            add_post_meta($new_post, 'video_url', $produit->video_url, true) || update_post_meta($new_post, 'video_url', $produit->video_url);
+            add_post_meta($new_post, 'product_url', $produit->url, true) || update_post_meta($new_post, 'product_url', $produit->url);
 
             $total++;
         }
